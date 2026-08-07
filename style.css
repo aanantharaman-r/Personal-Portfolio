@@ -113,7 +113,10 @@ header{
     color: #00e5ff;
 }
 
-/* ================= NAVBAR LINKS ================= */
+nav .nav li a i{
+
+    display: none;
+}
 
 nav .nav{
 
@@ -1498,6 +1501,8 @@ nav .nav li a:hover::after{
     }
 
     nav .nav li a i{
+
+        display: block;
 
         font-size: 16px;
 
