@@ -272,3 +272,44 @@ window.addEventListener("scroll",()=>{
     }
 
 });
+
+
+// ================= PRELOADER LOADING SCREEN (DYNAMIC 2 SECONDS) =================
+
+const loaderWrapper = document.getElementById("loader-wrapper");
+const loaderCounter = document.getElementById("loader-counter");
+const loaderProgressFill = document.getElementById("loader-progress-fill");
+const loaderStatus = document.getElementById("loader-status");
+
+if (loaderWrapper) {
+    document.body.style.overflow = "hidden";
+
+    let progress = 0;
+    const duration = 2000; // 2 seconds
+    const intervalTime = 20;
+    const increment = 100 / (duration / intervalTime);
+
+    const timer = setInterval(() => {
+        progress += increment;
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(timer);
+        }
+
+        const currentVal = Math.floor(progress);
+        if (loaderCounter) loaderCounter.textContent = currentVal;
+        if (loaderProgressFill) loaderProgressFill.style.width = currentVal + "%";
+
+        if (currentVal > 50 && loaderStatus && loaderStatus.textContent !== "SYSTEM READY...") {
+            loaderStatus.textContent = "SYSTEM READY...";
+        }
+
+        if (progress >= 100) {
+            setTimeout(() => {
+                loaderWrapper.classList.add("loader-hidden");
+                document.body.style.overflow = "";
+            }, 100);
+        }
+    }, intervalTime);
+}
+
