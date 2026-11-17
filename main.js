@@ -74,7 +74,7 @@ if (menuBtn && navbar) {
 
         if (icon) {
 
-            icon.classList.toggle("fa-ellipsis-vertical");
+            icon.classList.toggle("fa-bars");
 
             icon.classList.toggle("fa-xmark");
 
@@ -106,7 +106,7 @@ navLinks.forEach(link => {
 
             if (icon) {
 
-                icon.classList.add("fa-ellipsis-vertical");
+                icon.classList.add("fa-bars");
 
                 icon.classList.remove("fa-xmark");
 
