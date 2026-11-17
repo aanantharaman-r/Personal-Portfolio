@@ -854,18 +854,24 @@ nav .nav li a:hover::after{
 
     transform: translate(-50%, -50%) scale(0.8);
 
-    padding: 14px 34px;
+    width: 54px;
+    height: 54px;
 
     border: 2px solid white;
 
-    border-radius: 50px;
+    border-radius: 50%;
 
     color: white;
 
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 600;
 
-    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
 
     opacity: 0;
 
